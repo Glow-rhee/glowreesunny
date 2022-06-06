@@ -1,0 +1,280 @@
+*{
+ margin:0;
+ padding:0;
+ box-sizing: border-box;
+}
+:root{
+ --Softred: hsl(7, 99%, 70%);
+--Yellow: hsl(51, 100%, 49%);
+--Darkdesaturatedcyan : hsl(167, 40%, 24%);
+--Darkblue: hsl(198, 62%, 26%);
+--Darkmoderatecyan: hsl(168, 34%, 41%);
+
+--Verydarkdesaturatedblue: hsl(212, 27%, 19%);
+--Verydarkgrayishblue: hsl(213, 9%, 39%);
+--Darkgrayishblue: hsl(232, 10%, 55%);
+--Grayishblue: hsl(210, 4%, 67%);
+--White: hsl(0, 0%, 100%);
+
+}
+body{
+ font-size:18px;
+ font-family: 'Barlow', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+a{
+ font-family: 'Fraunces', serif;
+}
+
+img{
+ max-width: 100%;
+
+}
+header{
+ background-image:url(./images/desktop/image-header.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ color:var(--White);
+ padding-top:2rem;
+ padding-bottom:10rem;
+}
+nav.navigation{
+ display:flex;
+ justify-content: space-between;
+ padding-inline: 2.5vw;
+margin-bottom:5rem;
+}
+.hamburger{
+ display:none;
+}
+.navigation__links{
+ display: flex;
+ gap:1.5rem;
+ list-style: none;
+}
+.navigation__links a{
+ color:var(--Verydarkdesaturatedblue);
+ text-decoration: none;
+ background-color: var(--White);
+ padding: 0.7em 1.5em;
+ border-radius: 100px;
+}
+ header h1{
+ text-align: center;
+ text-transform: uppercase;
+ margin-bottom: 4rem;
+ letter-spacing: 10px;
+}
+
+header > img{
+ position:relative;
+ left:50%;
+ animation:bounce 2s infinite;
+}
+@keyframes bounce {
+ from{
+  opacity:0;
+  transform: translate(-50%, 40%);
+ }
+ to{
+  opacity: 1;
+  transform: translateY(-50%, 0%);
+ }
+}
+@media (max-width:700px) {
+ .navigation__links{
+  /* display:none;  */
+  transform:scaleY(0);
+  transition:0.4s;
+  transform-origin: top;
+  position:absolute;
+  top:6rem;
+  padding-block:3rem ;
+  background-color: var(--White);
+  color:var(--Darkblue);
+  width:90vw;
+  flex-direction: column;
+  gap:2rem;
+  align-items: center;
+  z-index: 2;
+ }
+ .navigation__links::after{
+  content: '';
+  /* there border tricks to create a triangel, check w3schools:how to make basic shapes*/
+  border-left:25px solid transperent;
+  border-top:25px solid transparent;
+  border-right: 25px solid var(--White);
+
+  /*Position absolute will make this pseudo element relative to the naviation__links is also positioned*/
+  position:absolute;
+  /*top:25px to bring it 25px upwards the same value as the border above. right:0
+  to stick it to the right edge of the navigation__links)*/
+  top:-25px;
+  right:0;
+ }
+ .navigation__links a{
+  background-color: var(--Yellow);
+ }
+ nav.navigaion{
+  padding-inline: 5vw;
+ }
+ .hamburger{
+  display: block;
+ }
+}
+
+.container{
+ display:flex;
+flex-wrap:wrap;
+ }
+ .container img{
+  width:50%;
+ 
+ }
+.container section{
+width:50%;
+padding: 15%;
+font-size: x-large;
+
+}
+.container section p{
+padding-top: 30px;
+  font-size: small;
+  }
+  
+
+/* .container h1{ 
+   padding-top: 30%;
+ display: flex;
+ justify-content: flex-start;
+ align-items: flex-start;
+ padding-inline: 25%;
+ padding-bottom: 2em;
+
+}
+
+
+.container p{
+  
+  padding-inline: 10em;
+ line-height:2;
+
+ color:var(--Darkgrayishblue)
+}   */
+button{
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight:bold;
+  background-color: var(--Yellow);
+  border:none;
+  margin-left: 30%;
+  margin-top:3rem;
+}
+
+ .container-2{
+ display:flex;
+justify-content: center;
+text-align: center;
+gap:20px;
+padding-inline: 5rem;
+margin-top: 5%;
+ 
+color: var(--Darkgrayishblue);
+}
+.container-2 img{
+
+ border-radius:100%;
+ margin-bottom: 50px;
+} 
+section h3{
+ 
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 7em;
+  color: var(--Darkgrayishblue);
+  letter-spacing: 3px;
+}
+.container-2 p{
+  line-height: 2;
+  
+  padding-inline: 50px;
+  text-size-adjust: 5px;
+  margin-bottom: 10em;
+  font-size:x-large;
+}
+.container-2 h4{
+  margin-top: 50px;
+ color: var(--Verydarkdesaturatedblue);
+}
+.container-3{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+footer {
+  background-color: var(--Darkmoderatecyan);
+  padding:5rem;
+  text-align:center;
+  color: var(--Darkdesaturatedcyan);
+}
+.last{
+ display:flex;
+ text-align: center;
+ justify-content: center;
+}
+
+h2{
+  margin-bottom: 30px;
+}
+
+
+.icon{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+gap:40px;
+  margin-top: 5rem;
+ 
+}
+@media (max-width:700px) {
+ .container{
+   flex-direction: column;
+  width: 100%;
+  display: flex;
+  
+ }
+ .container img{
+   width: 100%;
+ }
+
+ .container section{
+   margin:15%;
+   font-size: medium;
+ 
+ }
+ .container section p{
+  padding-top: 30px;
+
+ }
+ .container-2{
+   flex-direction: column;
+ }
+ .container-2 h4{
+ margin-top: 10px;
+ }
+ .small{
+ font-size: 5px;
+  }
+ .container-2 p{
+  margin-bottom: 3em;
+  }
+ .container-3{
+   grid-template-columns: 1fr 1fr;
+ }
+  
+}
